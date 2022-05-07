@@ -5,6 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 public class FlightCargo {
@@ -15,9 +17,7 @@ public class FlightCargo {
     @OneToMany(cascade = CascadeType.ALL)
     private List<CargoEntry> cargo;
 
-    public double countCargoWeight(){
-        return countWeight(cargo);
-    }
+    public double countCargoWeight(){ return countWeight(cargo);}
 
     public double countBaggageWeight(){
         return countWeight(baggage);

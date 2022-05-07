@@ -19,5 +19,5 @@ public interface FlightRepository extends JpaRepository<Flight, Long> {
     Optional<List<Flight>> findByDepartureDateBetweenAndArrivalAirportIATACode(
             @Param("startDate") ZonedDateTime startDate,
             @Param("endDate") ZonedDateTime endDate,
-            @Param("departureAirportIATACode") String departureAirportIATACode);
+            @Param("arrivalAirportIATACode") String arrivalAirportIATACode);
 }

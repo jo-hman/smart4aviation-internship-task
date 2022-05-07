@@ -24,14 +24,14 @@ public class FlightController {
 
     @PostMapping("post-test-flights")
     public ResponseEntity postTestFlights(@RequestBody List<Flight> flights){
-        flightService.addFlights(flights);
+        flightService.saveFlights(flights);
         log.info("Test flights successfully posted");
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @PostMapping("post-test-cargos")
     public ResponseEntity postTestCargos(@RequestBody List<FlightCargo> flightCargos){
-        flightService.addCargos(flightCargos);
+        flightService.saveFlightCargos(flightCargos);
         log.info("Test cargos successfully posted");
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
